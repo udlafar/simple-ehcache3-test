@@ -1,0 +1,19 @@
+<config xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns='http://www.ehcache.org/v3' xmlns:jsr107='http://www.ehcache.org/v3/jsr107'>
+
+	<persistence directory="/tmp/cache"></persistence>
+
+	<cache alias="echo" uses-template="common-cache-template" />
+
+	<cache alias="echoSync" uses-template="common-cache-template" />
+
+	<cache-template name="common-cache-template">
+		<expiry>
+			<ttl unit="hours">24</ttl>
+		</expiry>
+		<resources>
+			<heap unit="MB">20</heap>
+			<disk unit="MB">100</disk>
+		</resources>
+	</cache-template>
+
+</config>
